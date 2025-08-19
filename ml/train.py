@@ -2,7 +2,7 @@
 from sklearn.datasets import load_diabetes
 from sklearn.linear_model import LinearRegression
 import joblib
-##
+
 def train_and_save_model():
     # Load dataset
     X, y = load_diabetes(return_X_y=True)
