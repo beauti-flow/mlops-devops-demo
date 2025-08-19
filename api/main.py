@@ -1,16 +1,14 @@
-# api/main.py
 from fastapi import FastAPI
-import joblib
+import pickle
 import numpy as np
-####
-app = FastAPI()
-model = joblib.load("model.pkl")
 
-@app.get("/")
-def home():
-    return {"message": "ML model API is running!"}
+app = FastAPI()
+
+# Load model
+with open("ml/model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 @app.post("/predict")
-def predict(features: list[float]):
-    prediction = model.predict([np.array(features)])
-    return {"prediction": prediction.tolist()}
+def predict(x: float):
+    pred = model.predict(np.array([[x]]))
+    return {"prediction": float(pred[0])}

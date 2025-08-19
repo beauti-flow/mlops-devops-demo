@@ -1,17 +1,18 @@
 # ml/train.py
-from sklearn.datasets import load_diabetes
+import pickle
 from sklearn.linear_model import LinearRegression
-import joblib
+import numpy as np
 
-def train_and_save_model():
-    # Load dataset
-    X, y = load_diabetes(return_X_y=True)
-    model = LinearRegression()
-    model.fit(X, y)
+# Sample data
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([2, 4, 6, 8, 10])
 
-    # Save model
-    joblib.dump(model, "model.pkl")
-    print("Model trained and saved as model.pkl")
+# Train model
+model = LinearRegression()
+model.fit(X, y)
 
-if __name__ == "__main__":
-    train_and_save_model()
+# Save model
+with open("ml/model.pkl", "wb") as f:
+    pickle.dump(model, f)
+
+print("Model trained and saved!")
