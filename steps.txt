@@ -75,7 +75,7 @@ git add .
 git commit -m "Initial commit"
 git push -u origin main
 
-
+minikube start
 kubectl get svc
 kubectl apply -f k8s/
 
