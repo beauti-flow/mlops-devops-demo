@@ -10,7 +10,7 @@ def train_and_save_model():
     model.fit(X, y)
 
     # Save model
-    joblib.dump(model, "model.pkl")
+    joblib.dump(model, "ml/model.pkl")
     print("Model trained and saved as model.pkl")
 
 if __name__ == "__main__":
