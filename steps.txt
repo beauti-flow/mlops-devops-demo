@@ -79,3 +79,5 @@ minikube start
 kubectl get svc
 kubectl apply -f k8s/
 
+kubectl get pods
+kubectl get services
