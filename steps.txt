@@ -86,3 +86,8 @@ kubectl get services
 
 pip freeze > requirements.txt
 
+
+trick to restart docker with newly trained model:
+docker run -p 8000:8000 -v F:\path\to\model.pkl:/app/model.pkl mlops-demo:latest
+
+docker run -p 8000:8000 -v F:\beautifl0w_1\beautifl0w_1-1\mlops-devops-demo\ml\model.pkl:/app/model.pkl mlops-demo:latest
